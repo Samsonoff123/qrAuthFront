@@ -102,6 +102,9 @@ export default function SignInPage() {
                   setData(result?.text);
                 }
               }}
+              constraints={{
+                facingMode: 'environment'
+              }}
               style={{ width: "100%" }}
             />
             <Button
