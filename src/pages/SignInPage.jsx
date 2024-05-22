@@ -21,7 +21,7 @@ export default function SignInPage() {
     setLoading(true);
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const res = await axios.post(`http://localhost:3000/api/login`, {
+    const res = await axios.post(`https://qr-auth-backend.vercel.app/login`, {
       email: data.get("email"),
       password: data.get("password"),
     });

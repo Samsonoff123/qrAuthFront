@@ -20,7 +20,7 @@ export default function SignUp() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
-    const res = await axios.post(`http://localhost:3000/api/register`, {
+    const res = await axios.post(`https://qr-auth-backend.vercel.app/register`, {
       email: data.get('email'),
       password: data.get('password'),
       first_name: data.get('firstName'),

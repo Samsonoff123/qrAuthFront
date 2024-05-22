@@ -4,7 +4,6 @@ import React from "react";
 import { Typography, TextField } from "@mui/material";
 import logo from "../images/logo.png";
 import bg from "../images/eny.png";
-import cat from "../images/cat.gif";
 import noprofile from "../images/no-profile.png";
 
 export default function PostsPage() {
@@ -34,7 +33,7 @@ export default function PostsPage() {
 
     if (parsedJwt.user_id || parsedJwt.userId) {
       axios
-        .post("http://localhost:3000/api/qr/generate", {
+        .post("https://qr-auth-backend.vercel.app/qr/generate", {
           userId: parsedJwt.user_id || parsedJwt.userId || "",
         })
         .then((res) => {
@@ -50,7 +49,7 @@ export default function PostsPage() {
 
     if (parsedJwt.email) {
       axios
-        .post("http://localhost:3000/api/user", {
+        .post("https://qr-auth-backend.vercel.app/user", {
           email: parsedJwt.email || "",
         })
         .then((res) => {
